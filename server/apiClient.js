@@ -1,15 +1,15 @@
 const axios = require('axios/index');
 
-const graphQLClient = (query, auth) => {
+const restClient = (query, auth) => {
 
     const settings = {
         async: true,
         crossDomain: true,
-        url: `https://${auth.shop}/admin/api/2019-07/graphql.json`,
+        url: `https://${auth.shop}/admin/api/2019-07/products.json`,
         method: 'POST',
         headers: {
             'X-Shopify-Access-Token': auth.token,
-            'Content-Type': 'application/graphql'
+            'Content-Type': 'application/json'
         },
         data: {},
         timeout: 10000
@@ -19,5 +19,5 @@ const graphQLClient = (query, auth) => {
 };
 
 module.exports = {
-    graphQLClient
+    restClient
 };

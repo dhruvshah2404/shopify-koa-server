@@ -19,7 +19,7 @@ router.get('/products/', async (ctx) => {
  
     const auth = prepareAuth(ctx);
  
-    await getProducts(auth).then(response => ctx.body = response.data.data.products);
+    await getProducts(auth).then(response => ctx.body = response.data);
 });
  
 module.exports = {
